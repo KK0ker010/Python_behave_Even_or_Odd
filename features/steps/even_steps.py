@@ -3,7 +3,7 @@ from behave import given, when, then
 from src.number_checker import check_number
 
 # TODO: Implementáld a Given step-et
-@given('the number is {number}')
+@given('the number is "{number}"')
 def step_given_number(context, number):
     context.number = int(number)
 

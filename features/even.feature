@@ -7,27 +7,13 @@ Feature: Páros szám ellenőrzése
   # 4. Negatív páros szám ellenőrzése (-4)
   # 5. Negatív páratlan szám ellenőrzése (-5)
 
-Scenario: Páros szám ellenőrzése
-  Given the number is 4
-  When I check the number
-  Then I should told "even"
+Scenario Outline: "<Description>"
+Given the number is "<number>"
+When I check the number
+Then I should told "<answer>"
 
-Scenario: Páros szám ellenőrzése
-  Given the number is 5
-  When I check the number
-  Then I should told "odd"
-
-Scenario: Páros szám ellenőrzése
-  Given the number is 0
-  When I check the number
-  Then I should told "even"
-
-  Scenario: Páros szám ellenőrzése
-  Given the number is -4
-  When I check the number
-  Then I should told "even"
-
-  Scenario: Páros szám ellenőrzése
-  Given the number is -5
-  When I check the number
-  Then I should told "odd"
+Examples:
+| number | answer | Description |
+| 2 | even | Páros szám ellenőrzése |
+| 5 | odd |
+| 0 | even |
